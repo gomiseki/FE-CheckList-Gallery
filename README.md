@@ -6,6 +6,9 @@
 
 <br>
 
+개발기간 220613 ~ 220701
+
+<br>
 
 [🚀 여기서 확인하세요](https://github.com/FE-CheckList-Gallery/FE-CheckList-Gallery)
 
