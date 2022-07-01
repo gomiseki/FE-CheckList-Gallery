@@ -57,7 +57,7 @@
 ## Member
 <details>
 <summary>
-<a href="https://github.com/milkboy2564">설재혁</a>
+<a href="https://github.com/SeolJaeHyeok">설재혁</a>
 </summary>
 <div markdown="1">       
 
@@ -83,7 +83,7 @@
 </details>
 <details>
 <summary>
-<a href="https://github.com/gomiseki">이혜성</a>
+<a href="https://github.com/ycs1m1yk">이혜성</a>
 </summary>
 <div markdown="1">       
 
@@ -93,7 +93,7 @@
 </details>
 <details>
 <summary>
-<a href="https://github.com/gomiseki">박민수</a>
+<a href="https://github.com/minsu2344">박민수</a>
 </summary>
 <div markdown="1">       
 
@@ -103,7 +103,7 @@
 </details>
 <details>
 <summary>
-<a href="https://github.com/gomiseki">김소리</a>
+<a href="https://github.com/sori-sodong">김소리</a>
 </summary>
 <div markdown="1">       
 
@@ -122,7 +122,7 @@
 <img src="https://user-images.githubusercontent.com/50083131/176616175-eeca18a2-f012-4006-b301-2807820db59d.png" width='700'> 
 
 - 작품의 미리보기 이미지를 눌러 게시물을 확인할 수 있습니다.
-<img src="https://user-images.githubusercontent.com/50083131/176826984-06da576e-6ebd-4ff5-ace5-28e94075a609.png" width='700'>
+<img src="https://user-images.githubusercontent.com/50083131/176828385-f43dac04-83a5-40c0-b9f5-d68d12523a96.png" width='700'>
 
 - 우측 상단의 Login 버튼을 통해 Github 소셜계정으로 로그인할 수 있습니다.
 
