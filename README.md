@@ -57,14 +57,20 @@
 ## Member
 <details>
 <summary>
-<a href="https://github.com/gomiseki">설재혁</a>
+<a href="https://github.com/milkboy2564">설재혁</a>
 </summary>
 <div markdown="1">       
 
-😎숨겨진 내용😎
+- API Instance 모듈 제작
+- 공통 Component 제작
+- Gallery work viewer(Carousel)
+- 태그 및 작가별 모아보기 기능
+- 작가별 작품 조회 및 삭제 기능
+- Main Page 제작
 
 </div>
 </details>
+
 <details>
 <summary>
 <a href="https://github.com/gomiseki">김주현</a>
