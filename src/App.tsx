@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Footer from './components/common/Footer';
-import Home from './components/home/Home';
-import Gallery from './components/gallery/Gallery';
-import Detail from './components/gallery/Detail';
-import Publish from './components/publish/Publish';
-import AuthCallback from './components/auth/AuthCallback';
-import Layout from './components/common/Layout';
-import Edit from './components/edit/Edit';
+import Footer from '@components/common/Footer';
+import Home from '@components/home/Home';
+import Gallery from '@components/gallery/Gallery';
+import Detail from '@components/gallery/Detail';
+import Publish from '@components/publish/Publish';
+import AuthCallback from '@components/auth/AuthCallback';
+import Layout from '@components/common/Layout';
+import Edit from '@components/edit/Edit';
 
 function App() {
   return (
