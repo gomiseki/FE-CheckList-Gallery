@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
+import styled from 'styled-components';
 import axios from 'axios';
 import Prism from 'prismjs';
-import { Viewer } from '@toast-ui/react-editor';
-import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import Loader from '../common/Loader';
-import { IAllPostProps } from '../../types/interface';
-import { postApi } from '../../lib/api';
-import { DetailViewer } from '../../lib/DetailViewer';
+import Loader from '@components/common/Loader';
+import { IAllPostProps } from '@interfaces/interface';
+import { postApi } from '@lib/api';
+import { DetailViewer } from '@lib/DetailViewer';
 
 import 'prismjs/themes/prism.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
-import { MarkdownViewer } from '../../lib/Markdown';
+import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
+import { Viewer } from '@toast-ui/react-editor';
+import { MarkdownViewer } from '@lib/Markdown';
 
 const TagLink = styled(Link)`
   text-decoration: none;

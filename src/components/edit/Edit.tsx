@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { postApi } from '../../lib/api';
-import { IAllPostProps } from '../../types/interface';
+import { IAllPostProps } from '@interfaces/interface';
+import { postApi } from '@lib/api';
 
 const PostList = styled.div`
   display: flex;

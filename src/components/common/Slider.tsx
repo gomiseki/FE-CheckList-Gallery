@@ -8,8 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlay, faPause, faAngleLeft, faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { IAllPostProps } from '../../types/interface';
-import { postApi } from '../../lib/api';
+import { IAllPostProps } from '@interfaces/interface';
+import { postApi } from '@lib/api';
 import Loader from './Loader';
 import SliderItem from './SliderItem';
 import Message from './Message';

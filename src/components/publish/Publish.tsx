@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { Editor } from '@toast-ui/react-editor';
-import Redirect from '../common/Redirect';
-import { MarkdownEditor } from '../../lib/Markdown';
-import FileUpload from '../../lib/FileUpload';
-import { FileProps } from '../../types/interface';
-import { postApi } from '../../lib/api';
+
+import Redirect from '@components/common/Redirect';
+import FileUpload from '@lib/FileUpload';
+import { MarkdownEditor } from '@lib/Markdown';
+import { postApi } from '@lib/api';
+import { FileProps } from '@interfaces/interface';
 
 const Container = styled.div`
   width:100%;
