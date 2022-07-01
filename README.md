@@ -60,7 +60,7 @@
 <a href="https://github.com/SeolJaeHyeok">설재혁</a>
 </summary>
 <div markdown="1">       
-
+  
 - API Instance 모듈 제작
 - 공통 Component 제작
 - Gallery work viewer(Carousel)
@@ -75,10 +75,14 @@
 <summary>
 <a href="https://github.com/gomiseki">김주현</a>
 </summary>
-<div markdown="1">       
-
-😎숨겨진 내용😎
-
+<div markdown="1">  
+  
+- BackEnd API 제작, 배포
+- iframe 뷰어 제작, 배포
+- Vite app initializing
+- github OAuth 로그인
+- Publish 페이지 제작
+  
 </div>
 </details>
 <details>
