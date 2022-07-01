@@ -158,7 +158,7 @@ export default function Publish() {
   const [tags, setTags] = useState<{id:number, tag:string}[]>([]);
   const [tagInput, setTagInput] = useState('');
 
-  const descRef = useRef<Editor>();
+  const descRef = useRef<Editor>(null);
   const tagId = useRef<number>(0);
 
   const formSubmitHandler = async (e:React.FormEvent<HTMLFormElement>) => {
