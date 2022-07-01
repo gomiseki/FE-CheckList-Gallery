@@ -42,7 +42,7 @@ const LoginImg = styled.img`
   margin-right: 0.5rem;
 `;
 
-export default function GitHubOauth({ token, handleAuth }: {token: string, handleAuth: Function}) {
+export default function GitHubOauth({ token, handleAuth }: {token: string | null, handleAuth: any}) {
   return (
     <>
       {token ? <PublishBtn /> : null}

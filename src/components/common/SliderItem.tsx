@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ICategoryListProps } from '@types/interface';
+import { ICategoryListProps } from '@interfaces/interface';
 import noImage from '@images/noImage.jpeg';
 
 const Container = styled.div`

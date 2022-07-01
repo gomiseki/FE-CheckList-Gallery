@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import axios from 'axios';
+import Prism from 'prismjs';
 import Loader from '@components/common/Loader';
-import { IAllPostProps } from '@types/interface';
+import { IAllPostProps } from '@interfaces/interface';
 import { postApi } from '@lib/api';
 import { DetailViewer } from '@lib/DetailViewer';
-import axios from 'axios';
 
-import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
-import { Viewer } from '@toast-ui/react-editor';
 import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
 import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import { MarkdownViewer } from '../../lib/Markdown';
+import { Viewer } from '@toast-ui/react-editor';
+import { MarkdownViewer } from '@lib/Markdown';
 
 const TagLink = styled(Link)`
   text-decoration: none;
@@ -106,7 +106,7 @@ function Body({ description }: any) {
   );
 }
 
-function CodeViewer({ code }:{fileName:string, fileData:string}) {
+function CodeViewer({ code }:any) {
   const [openState, setOpenState] = useState<boolean>(false);
 
   function handleToggle() {
@@ -115,7 +115,7 @@ function CodeViewer({ code }:{fileName:string, fileData:string}) {
 
   return (
     <>
-      <CodeToggle openState={openState} onClick={handleToggle}>{openState ? `${code.fileName} ▲` : `${code.fileName} ▼`}</CodeToggle>
+      <CodeToggle onClick={handleToggle}>{openState ? `${code.fileName} ▲` : `${code.fileName} ▼`}</CodeToggle>
       {openState
         && (
         <Viewer
@@ -137,7 +137,7 @@ export default function Detail() {
   const getPostFromApi = async () => {
     try {
       const { data } = await postApi.getPostById(postId);
-      const codes = await Promise.all(data.code.map(async ({ fileName, fileUrl }) => {
+      const codes = await Promise.all(data.code.map(async ({ fileName, fileUrl }: any) => {
         const temp = await axios(fileUrl);
         return { fileName, fileData: temp.data };
       }));

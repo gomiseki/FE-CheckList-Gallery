@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSearchParams, Link } from 'react-router-dom';
 import { userApi } from '@lib/api';
-import { IAuthorProps } from '@types/interface';
+import { IAuthorProps } from '@interfaces/interface';
 
 const AuthorList = styled.li``;
 
-const AuthorLink = styled(Link)<{ismatch: string}>`
+const AuthorLink = styled(Link)<{ismatch: string | undefined}>`
   font-size: 1.5vw;
   border-bottom: ${(props) => (props.ismatch ? `3px solid ${props.theme.palette.africanruby}` : null)};
 `;
@@ -41,7 +41,11 @@ function getUser() {
       </AuthorLink>
     </AuthorList>
   ));
-  return usersList;
+  return (
+    <>
+      {usersList}
+    </>
+  );
 }
 
 export default getUser;

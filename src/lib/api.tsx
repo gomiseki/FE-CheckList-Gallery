@@ -13,7 +13,7 @@ export const authApi = {
 export const postApi = {
   getAllPosts: (params?: Object) => api.get('/post', { params }),
   getPostById: (postId: string | undefined) => api.get(`/post/${postId}`),
-  deletePost: (postId: string, token: string) => api.delete(`/post/${postId}`, {
+  deletePost: (postId: string, token: string | null) => api.delete(`/post/${postId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -23,7 +23,7 @@ export const postApi = {
       Authorization: `Bearer ${token}`,
     },
   }),
-  publishPost: (bodyData: FormData, token: string) => api.post('/post', bodyData, {
+  publishPost: (bodyData: FormData, token: string | null) => api.post('/post', bodyData, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { postApi } from '../../lib/api';
-import { IAllPostProps } from '../../types/interface';
+import { IAllPostProps } from '@interfaces/interface';
+import { postApi } from '@lib/api';
 
 const PostList = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ function Edit() {
     setPosts(data);
   };
 
-  const handleRouteDetail = (postId) => {
+  const handleRouteDetail = (postId: string | null) => {
     navigate(`/gallery/${postId}`);
   };
 
@@ -79,9 +79,9 @@ function Edit() {
 
   return (
     <PostList>
-      {posts.map((post) => (
+      {posts.map((post : IAllPostProps) => (
         <PostItem key={post._id}>
-          <PostTitle onClick={(e) => handleRouteDetail(post._id)}>{post.title}</PostTitle>
+          <PostTitle onClick={() => handleRouteDetail(post._id)}>{post.title}</PostTitle>
           {/* <DeleteButton onClick={(e) => handleDelete(post._id)}>삭제</DeleteButton> */}
           <DeleteButton onClick={(e) => handleDelete(post._id)}>삭제</DeleteButton>
         </PostItem>

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlay, faPause, faAngleLeft, faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { IAllPostProps } from '@types/interface';
+import { IAllPostProps } from '@interfaces/interface';
 import { postApi } from '@lib/api';
 import Loader from './Loader';
 import SliderItem from './SliderItem';
@@ -133,8 +133,8 @@ function Carousel() {
           </>
         ))}
       </Slider>
-      {!posts.length && !error && <Message color={(props) => props.theme.palette.triconblack} message="해당 작가의 작품이 존재하지 않습니다." />}
-      {error && <Message color={(props) => props.theme.palette.africanruby} message="정보를 불러오는데 오류가 발생했습니다." />}
+      {!posts.length && !error && <Message color="#73777B" message="해당 작가의 작품이 존재하지 않습니다." />}
+      {error && <Message color="red" message="정보를 불러오는데 오류가 발생했습니다." />}
     </>
   );
 }

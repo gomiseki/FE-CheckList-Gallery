@@ -12,7 +12,12 @@ const Text = styled.span`
   font-size: 1.3rem;
 `;
 
-function Message({ color, message }: {color: string, message: string}) {
+interface IMessageProps {
+  color: string;
+  message: string;
+}
+
+function Message({ color, message }: IMessageProps) {
   return <Container><Text color={color}>{message}</Text></Container>;
 }
 
