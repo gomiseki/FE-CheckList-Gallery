@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Slider from '@components/common/Slider';
-import Loader from '@components/common/Loader';
-import SideBar from '@components/gallery/SideBar';
+import Slider from '../common/Slider';
+import Loader from '../common/Loader';
+import SideBar from './SideBar';
 
 const GalleryContainer = styled.div`
   width: 768px;

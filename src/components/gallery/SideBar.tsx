@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ICategoryProps } from '@types/interface';
-import { postApi } from '@lib/api';
-import TagList from '@components/gallery/TagList';
-import Tags from '@components/gallery/Tags';
+import { ICategoryProps } from '../../types/interface';
+import { postApi } from '../../lib/api';
+import TagList from './TagList';
+import Tags from './Tags';
 
 interface TagProps extends ICategoryProps {
   selected: boolean;
@@ -12,7 +12,6 @@ interface TagProps extends ICategoryProps {
 export default function SideBar() {
   const [isLoading, setIsLoading] = useState(true);
   const [tags, setTags] = useState<TagProps[]>([]);
-  const [error, setError] = useState(null);
   const [searchParams] = useSearchParams();
 
   const getPosts = async () => {
@@ -31,9 +30,9 @@ export default function SideBar() {
         selected: false,
         __v: 0,
       };
-      const newTagsMap = data.reduce((acc, item) => {
+      const newTagsMap = data.reduce((acc: { [x: string]: any; }, item: { categories: any; }) => {
         const { categories } = item;
-        categories.forEach(({ category }) => {
+        categories.forEach(({ category }: any) => {
           if (acc[category._id]) {
             acc[category._id].post += 1;
             return;
@@ -45,7 +44,6 @@ export default function SideBar() {
       const newTags: TagProps[] = Object.values(newTagsMap);
       setTags([allTag, ...newTags]);
     } catch (err: any) {
-      setError(err);
       console.log(err);
     }
     setIsLoading(false);

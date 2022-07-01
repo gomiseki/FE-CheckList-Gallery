@@ -6,7 +6,7 @@ import { darken } from 'polished';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderMinus } from '@fortawesome/free-solid-svg-icons';
 
-import { FileProps } from '@types/interface';
+import { FileProps } from '../types/interface';
 
 interface FileUploadProps{
   name:string,
@@ -147,7 +147,7 @@ export default function FileUpload({
     onUploadFile(e); // 드롭 시 업로드
   };
   // 삭제 버튼 클릭 시 삭제
-  const deletefileHandler = (e: MouseEventHandler<SVGSVGElement>, id:number) => {
+  const deletefileHandler = (e: React.MouseEvent<SVGSVGElement>, id:number) => {
     e.preventDefault();
     e.stopPropagation();
     setFileState(fileState.filter((file) => file.id !== id));

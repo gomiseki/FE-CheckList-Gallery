@@ -50,19 +50,11 @@ const StyledSpan = styled.span`
   };
 `;
 
-function TagList({ tags }) {
+function TagList({ tags }: any) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (e: any) => {
     e.preventDefault();
-
-    const target = e.target.closest('li');
-    const id = target.dataset.id.split('taglist-')[1];
-    if (id === 'all') {
-      searchParams.delete('tag');
-    } else if (id) {
-      searchParams.set('tag', id);
-    }
     setSearchParams(searchParams);
   };
 
@@ -73,7 +65,7 @@ function TagList({ tags }) {
         <ul>
           {tags.map(({
             _id, name, post, selected,
-          }) => (
+          }: any) => (
             <Tag key={_id} data-id={`taglist-${_id}`} className={selected ? 'selected' : undefined}>
               <StyledSpan>{`${name}(${post})`}</StyledSpan>
             </Tag>

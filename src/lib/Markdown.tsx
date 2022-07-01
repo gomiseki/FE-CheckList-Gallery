@@ -6,9 +6,7 @@ interface ViewerProps{
   text:string,
 }
 
-export const MarkdownEditor = forwardRef((props, ref) => (
-  <Editor ref={ref} />
-));
+export const MarkdownEditor = forwardRef<Editor>((props, ref) => (<Editor ref={ref} />));
 
 export function MarkdownViewer({ text }:ViewerProps) {
   return (

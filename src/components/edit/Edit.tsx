@@ -57,7 +57,7 @@ function Edit() {
     setPosts(data);
   };
 
-  const handleRouteDetail = (postId) => {
+  const handleRouteDetail = (postId: string | null) => {
     navigate(`/gallery/${postId}`);
   };
 
@@ -79,9 +79,9 @@ function Edit() {
 
   return (
     <PostList>
-      {posts.map((post) => (
+      {posts.map((post : IAllPostProps) => (
         <PostItem key={post._id}>
-          <PostTitle onClick={(e) => handleRouteDetail(post._id)}>{post.title}</PostTitle>
+          <PostTitle onClick={() => handleRouteDetail(post._id)}>{post.title}</PostTitle>
           {/* <DeleteButton onClick={(e) => handleDelete(post._id)}>삭제</DeleteButton> */}
           <DeleteButton onClick={(e) => handleDelete(post._id)}>삭제</DeleteButton>
         </PostItem>

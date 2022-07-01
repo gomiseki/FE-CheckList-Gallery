@@ -1,13 +1,14 @@
 import React, { useState, useRef } from 'react';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
-import { MarkdownEditor } from '@lib/Markdown';
-import FileUpload from '@lib/FileUpload';
-import { FileProps } from '@types/interface';
-import { postApi } from '@lib/api';
-import Redirect from '@components/common/Redirect';
+import { Editor } from '@toast-ui/react-editor';
+import Redirect from '../common/Redirect';
+import { MarkdownEditor } from '../../lib/Markdown';
+import FileUpload from '../../lib/FileUpload';
+import { FileProps } from '../../types/interface';
+import { postApi } from '../../lib/api';
 
 const Container = styled.div`
   width:100%;
@@ -157,16 +158,17 @@ export default function Publish() {
   const [tags, setTags] = useState<{id:number, tag:string}[]>([]);
   const [tagInput, setTagInput] = useState('');
 
-  const descRef = useRef();
+  const descRef = useRef<Editor>();
   const tagId = useRef<number>(0);
 
-  const formSubmitHandler = async (e:React.FormEventHandler<HTMLFormElement>) => {
+  const formSubmitHandler = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const formData = new FormData(e.target);
+      const formData = new FormData(e.target as HTMLFormElement);
       // 마크다운 데이터 get
-      const description = descRef.current.getInstance().getMarkdown();
-      formData.append('description', description);
+      const description = descRef.current?.getInstance().getMarkdown();
+      if (description)formData.append('description', description);
+
       codeList.forEach(({ file }) => {
         if (file)formData.append('code', file);
       });
@@ -179,25 +181,25 @@ export default function Publish() {
       }
 
       // publishing 후 리다이렉트
-      const newPost = await postApi.publishPost(formData, token);
+      await postApi.publishPost(formData, token);
       navigate('/gallery');
     } catch (error) {
       alert(error);
     }
   };
 
-  const tagInputChange = (e:React.ChangeEventHandler<HTMLInputElement>) => {
+  const tagInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setTagInput(e.target.value);
   };
 
-  const tagSubmitHandler = (e:React.MouseEventHandler<SVGSVGElement>) => {
+  const tagSubmitHandler = (e:any) => {
     if (tagInput) {
       setTags([...tags, { id: tagId.current++, tag: tagInput }]);
     }
     setTagInput('');
   };
 
-  const tagDeleteHandler = (e:React.MouseEventHandler<HTMLInputElement>, id:number) => {
+  const tagDeleteHandler = (e:React.MouseEvent<HTMLInputElement>, id:number) => {
     setTags(tags.filter((tag) => tag.id !== id));
   };
 

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import Loader from '@components/common/Loader';
-import { authApi } from '@lib/api';
+import { AxiosError } from 'axios';
+import Loader from '../common/Loader';
+import { authApi } from '../../lib/api';
 
 export default function AuthCallback() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function AuthCallback() {
     if (code) {
       authApi
         .getAuthToken(code)
-        .then((data) => {
+        .then((data : any) => {
           const response = data.data;
           console.log(response);
           window.localStorage.setItem('token', response.token);
@@ -20,7 +21,7 @@ export default function AuthCallback() {
           window.localStorage.setItem('authorId', response.userId);
           navigate('/gallery');
         })
-        .catch((e) => {
+        .catch((e : AxiosError | Error) => {
           alert(e);
           navigate('/gallery');
         });

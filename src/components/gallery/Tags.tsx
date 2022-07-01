@@ -43,18 +43,11 @@ const Tag = styled.span`
   }
  `;
 
-function Tags({ tags }) {
+function Tags({ tags }: any) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-
-    const id = e.target.dataset.id.split('tags-')[1];
-    if (id === 'all') {
-      searchParams.delete('tag');
-    } else {
-      searchParams.set('tag', id);
-    }
     setSearchParams(searchParams);
   };
 
@@ -62,7 +55,7 @@ function Tags({ tags }) {
     <StyledTags className="Tags" onClick={handleClick}>
       {tags.map(({
         _id, name, post, selected,
-      }) => (
+      }: any) => (
         <Tag key={_id} data-id={`tags-${_id}`} className={selected ? 'selected' : undefined}>
           {`${name}(${post})`}
         </Tag>

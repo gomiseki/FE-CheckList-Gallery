@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconW from '@images/GithubIconWhite.png';
-import PublishBtn from '@components/common/PublishBtn';
-import EditButton from '@components/edit/EditButton';
+import IconW from '../../images/GithubIconWhite.png';
+import PublishBtn from '../common/PublishBtn';
+import EditButton from '../edit/EditButton';
 
 const GithubButton = styled.a`
   display: flex;
@@ -25,7 +25,7 @@ const GithubButton = styled.a`
     }
 
     & img {
-      background-image: url('@images/GithubIconWhite.png');
+      background-image: url('../../images/GithubIconWhite.png');
     }
   }
 `;
@@ -42,7 +42,7 @@ const LoginImg = styled.img`
   margin-right: 0.5rem;
 `;
 
-export default function GitHubOauth({ token, handleAuth }: {token: string, handleAuth: Function}) {
+export default function GitHubOauth({ token, handleAuth }: {token: string | null, handleAuth: any}) {
   return (
     <>
       {token ? <PublishBtn /> : null}
