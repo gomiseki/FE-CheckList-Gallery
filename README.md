@@ -6,7 +6,7 @@
 
 <br>
 
-개발기간 220613 ~ 220701
+**개발기간 220613 ~ 220701**
 
 <br>
 
@@ -55,6 +55,56 @@
 <br>
 
 ## Member
+<details>
+<summary>
+<a href="https://github.com/gomiseki">설재혁</a>
+</summary>
+<div markdown="1">       
+
+😎숨겨진 내용😎
+
+</div>
+</details>
+<details>
+<summary>
+<a href="https://github.com/gomiseki">김주현</a>
+</summary>
+<div markdown="1">       
+
+😎숨겨진 내용😎
+
+</div>
+</details>
+<details>
+<summary>
+<a href="https://github.com/gomiseki">이혜성</a>
+</summary>
+<div markdown="1">       
+
+😎숨겨진 내용😎
+
+</div>
+</details>
+<details>
+<summary>
+<a href="https://github.com/gomiseki">박민수</a>
+</summary>
+<div markdown="1">       
+
+😎숨겨진 내용😎
+
+</div>
+</details>
+<details>
+<summary>
+<a href="https://github.com/gomiseki">김소리</a>
+</summary>
+<div markdown="1">       
+
+😎숨겨진 내용😎
+
+</div>
+</details>
 
 <br>
 
@@ -64,6 +114,9 @@
 
 - 갤러리에서는 상단 작가 목록과 좌측 태그를 클릭하여 게시물을 필터링할 수 있습니다.
 <img src="https://user-images.githubusercontent.com/50083131/176616175-eeca18a2-f012-4006-b301-2807820db59d.png" width='700'> 
+
+- 작품의 미리보기 이미지를 눌러 게시물을 확인할 수 있습니다.
+<img src="https://user-images.githubusercontent.com/50083131/176826984-06da576e-6ebd-4ff5-ace5-28e94075a609.png" width='700'>
 
 - 우측 상단의 Login 버튼을 통해 Github 소셜계정으로 로그인할 수 있습니다.
 
